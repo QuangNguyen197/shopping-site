@@ -20,12 +20,8 @@ const Spotlight = () => {
           <Card
             key={product.id}
             product={product}
-            title={product.category}
-            name={product.category}
             src={getImageById(product.imageId)?.src?.original}
             size="150px"
-            text={product.name}
-            price={product.price}
             dec={false}
           />
         ))}
@@ -34,7 +30,7 @@ const Spotlight = () => {
   );
 };
 
-export function Card({ product, src, size, dec = true }) {
+export function Card({ product, src, size, dec = true, int = false }) {
   const navigate = useNavigate();
 
   return (
@@ -42,7 +38,7 @@ export function Card({ product, src, size, dec = true }) {
       className={product.category}
       onClick={() => navigate(`/product/${product.id}`)}
     >
-      <div className="imageWrapper grid place-content-center">
+      <div className="imageWrapper grid place-content-center cursor-pointer">
         <div className="fetchedImage w-[fit-content] overflow-hidden">
           <img
             src={src}
@@ -55,8 +51,12 @@ export function Card({ product, src, size, dec = true }) {
 
       <div className="cardDes">
         {dec && <p>{product.category}</p>}
-        <p>{product.name}</p>
-        <p>{product.price}</p>
+        {!int && (
+          <>
+            <p>{product.name}</p>
+            <p>{product.price}</p>
+          </>
+        )}
       </div>
     </div>
   );

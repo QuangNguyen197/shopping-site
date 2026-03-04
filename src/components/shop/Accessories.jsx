@@ -27,11 +27,11 @@ export const AccessoryCategory = ({ title, selectedIds, dec = true }) => {
           {selectedProducts.map((product) => (
             <Card
               key={product.id}
-              product={product}
-              title={product.category}
-              name={product.category}
               src={getImageById(product.imageId)?.src?.original}
               size="200px"
+              product={product}
+              name={product.category}
+              title={product.category}
               text={product.name}
               price={product.price}
             />

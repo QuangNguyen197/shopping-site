@@ -1,9 +1,12 @@
-import Nav from "../Nav";
+import Interested from "../shop/products/Interested";
+import Footer from "../Home/Footer";
 
 const Cart = () => {
   return (
     <>
-      <div className="cartPage"></div>
+      <div className="cartPage">
+        <Interested />
+      </div>
     </>
   );
 };

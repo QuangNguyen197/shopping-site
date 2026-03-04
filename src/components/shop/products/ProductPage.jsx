@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useMemo } from "react";
 import { useFetchImages } from "../../../API/pexelsAPI";
 import { allProducts } from "./allProducts.js";
+import Interested from "./Interested.jsx";
 import Footer from "../../Home/Footer";
 
 export const ProductPage = () => {
@@ -29,13 +30,13 @@ export const ProductPage = () => {
             <span>Category</span>
           )}
           <span>/</span>
-          <span className="font-bold text-black">
+          <span className="font-bold text-black cursor-pointer">
             {product?.name || "Unknown Product"}
           </span>
         </nav>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-center items-start gap-12 px-6 lg:px-20 pt-8 pb-20">
+      <div className="flex flex-col lg:flex-row justify-center items-start gap-12 px-6 lg:px-20 pt-8 pb-[12em]">
         <div className="flex-1 max-w-md w-full">
           {product ? (
             imageSrc ? (
@@ -84,7 +85,7 @@ export const ProductPage = () => {
           </div>
         )}
       </div>
-
+      <Interested />
       <Footer />
     </>
   );
