@@ -1,6 +1,6 @@
 import { NavLink, Link } from "react-router";
 import { useState, useRef } from "react";
-import cacti from "../assets /cacti.svg";
+import cacti from "../assets/cacti.svg";
 import { useCart } from "./cart/useCart";
 
 const CustomNavLink = ({ to, children }) => {
